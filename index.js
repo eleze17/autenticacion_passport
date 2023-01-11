@@ -1,7 +1,5 @@
 import express from 'express' 
 const app = express()
-import {productsRouter} from './routes/routerProductos.js' 
-import {cartRouter} from './routes/routerCarritos.js'
 import {logRouter} from './routes/routerLogin.js'
 import {regRouter} from './routes/routerRegister.js'
 import {infoRouter} from './routes/infoRouter.js'
@@ -25,8 +23,7 @@ const puerto = args.p
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/api/productos', productsRouter)
-app.use('/api/carritos', cartRouter)
+
 app.use('/api/login', logRouter)
 app.use('/api/register', regRouter)
 app.use('/info', infoRouter)

@@ -1,6 +1,4 @@
 import mongoose from 'mongoose'
-//import {posteo}  from '../modelos/modelo.js'
-//import {carritos} from '../modelos/modelo.js'
 import {usuarios} from '../modelos/modelo.js'
 import * as dotenv from 'dotenv' 
 dotenv.config()
@@ -133,7 +131,7 @@ async  actualizar(dato,nuevovalor,res){
                 
                 if (this.model == "productos"){
                 console.log('mongo conectado')
-                let buscado = await productos.find({id:dato}) 
+                let buscado = await productos.find(dato==undefined?{}:{id:dato}) 
                 console.log('documento buscado!' + buscado)
                 res.send(buscado)
           
